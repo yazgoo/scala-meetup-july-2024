@@ -2,7 +2,7 @@
 
 <img src="repo.png" width="300"/>
 
-## sbt-github-depedency-submition
+# sbt-github-dependency-submition
 
 https://github.com/scalacenter/sbt-dependency-submission/
 
@@ -10,7 +10,7 @@ how it works
 
 - generates a snapshot json with a dependency tree
 - publishes the snapshot to github
-- github update CVE alerts based on the snapshot
+- github updates CVE alerts based on the snapshot
 
 ## Setting up the workflow
 
@@ -21,7 +21,7 @@ see https://github.com/yazgoo/scala-meetup-july-2024/actions
 
 see https://github.com/yazgoo/scala-meetup-july-2024/security
 
-## Usual tools to monitor dependencies
+## Tools to monitor dependencies
 
 #### dependency tree
 
@@ -57,7 +57,7 @@ addSbtPlugin("net.vonbuchholtz" % "sbt-dependency-check" % "5.1.0")
 
 *WARNING⚠* does not give exactly the same results as sbt-dependency-submission
 
-## My fork of sbt-github-depedency-submition (WIP)
+## My fork of sbt-github-dependency-submition (WIP)
 
 https://github.com/yazgoo/sbt-dependency-submission
 
