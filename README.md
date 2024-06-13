@@ -31,9 +31,9 @@ Add to `project/plugins.sbt`:
 addDependencyTreePlugin
 ```
 
-run:
+run in sbt:
 
-```sbt
+```scala
 dependencyTree
 whatDependsOn com.amazonaws aws-java-sdk-core 1.12.148
 dependencyBrowseGraph
@@ -47,16 +47,28 @@ find deps:
 ❯ coursier resolve com.google.cloud:google-cloud-bigquery:2.10.10
 ```
 
+#### sbt-dependency-check
+
+https://github.com/albuch/sbt-dependency-check/
+
+```scala
+addSbtPlugin("net.vonbuchholtz" % "sbt-dependency-check" % "5.1.0")
+```
+
+*WARNING⚠* does not give exactly the same results as sbt-dependency-submission
+
 ## My fork of sbt-github-depedency-submition (WIP)
 
 https://github.com/yazgoo/sbt-dependency-submission
 
-```sbt
+sbt:
+
+```scala
 githubGenerateSnapshot
 githubAnalyzeDependencies alerts
 githubAnalyzeDependencies cves
 githubAnalyzeDependencies list jackson-databind
-githubAnalyzeDependencies get jackson-databind
+githubAnalyzeDependencies get jackson-databind:2.12.3
 ```
 
 ## Fixing CVEs
