@@ -89,7 +89,6 @@ several things you can do:
     1. try and override the lib (**☢**  test it well because there might be incompatibilities)
 
 
-----
 
 ### excluding a lib
 
@@ -100,7 +99,6 @@ libraryDependencies ++= Seq(
 )
 ```
 
-----
 
 ### overriding the lib
 
