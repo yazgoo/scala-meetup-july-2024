@@ -1,6 +1,6 @@
 # CVEs on github
 
-<img src="repo.png" width="300"/>
+<img src="qrrepo.png" width="300"/>
 
 > [!NOTE]
 > The Common Vulnerabilities and Exposures (CVE) system provides a reference method 
