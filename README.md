@@ -2,6 +2,8 @@
 
 <img src="qrrepo.png" width="300"/>
 
+👋 Olivier, dev at teads
+
 ## what we want to avoid
 
 <details>
