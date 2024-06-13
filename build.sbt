@@ -1,4 +1,4 @@
-name := "scala-meetup-july-2024"
+name := "scala-meetup-june-2024"
 
 version := "0.1"
 

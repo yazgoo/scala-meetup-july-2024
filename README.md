@@ -26,11 +26,11 @@ how it works
 
 see `.github/workflows/dependency-graph.yml`
 
-see https://github.com/yazgoo/scala-meetup-july-2024/actions
+see https://github.com/yazgoo/scala-meetup-june-2024/actions
 
 ## Monitoring CVEs
 
-see https://github.com/yazgoo/scala-meetup-july-2024/security
+see https://github.com/yazgoo/scala-meetup-june-2024/security
 
 ## Tools to monitor dependencies
 
