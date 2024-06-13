@@ -2,6 +2,10 @@
 
 <img src="repo.png" width="300"/>
 
+> [!NOTE]
+> The Common Vulnerabilities and Exposures (CVE) system provides a reference method 
+> for publicly known information-security vulnerabilities and exposures
+
 # sbt-github-dependency-submition
 
 https://github.com/scalacenter/sbt-dependency-submission/
