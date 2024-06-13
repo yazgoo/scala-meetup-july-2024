@@ -1,6 +1,6 @@
 # CVEs on github
 
-![repo.png](repo.png)
+<img src="repo.png" width="500"/>
 
 ## sbt-github-depedency-submition
 
