@@ -18,7 +18,8 @@ how it works
 
 ## Setting up the workflow
 
-see .github/workflows/dependency-graph.yml
+see `.github/workflows/dependency-graph.yml`
+
 see https://github.com/yazgoo/scala-meetup-july-2024/actions
 
 ## Monitoring CVEs
