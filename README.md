@@ -6,6 +6,12 @@
 > The Common Vulnerabilities and Exposures (CVE) system provides a reference method 
 > for publicly known information-security vulnerabilities and exposures
 
+# what we want to avoid
+
+![ventilation](ventilation.svg)
+
+https://www.youtube.com/watch?v=BlCuVZK2aqE
+
 # sbt-github-dependency-submition
 
 https://github.com/scalacenter/sbt-dependency-submission/
