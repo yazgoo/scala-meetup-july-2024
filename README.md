@@ -2,15 +2,23 @@
 
 <img src="qrrepo.png" width="300"/>
 
-> [!NOTE]
-> The Common Vulnerabilities and Exposures (CVE) system provides a reference method 
-> for publicly known information-security vulnerabilities and exposures
+## what we want to avoid
 
-# what we want to avoid
+<details>
 
 ![ventilation](ventilation.svg)
 
 https://www.youtube.com/watch?v=BlCuVZK2aqE
+
+</details>
+
+## CVEs
+
+> [!NOTE]
+> The Common Vulnerabilities and Exposures (CVE) system provides a reference method 
+> for publicly known information-security vulnerabilities and exposures
+
+goal: give you tips/tools to monitor and fix CVEs
 
 # sbt-github-dependency-submition
 
@@ -68,6 +76,12 @@ addSbtPlugin("net.vonbuchholtz" % "sbt-dependency-check" % "5.1.0")
 
 *WARNING⚠* does not give exactly the same results as sbt-dependency-submission
 
+```scala
+dependencyCheck
+```
+
+=> generate `target/scala-3.4.2/dependency-check-report.html`
+
 ## My fork of sbt-github-dependency-submition (WIP)
 
 https://github.com/yazgoo/sbt-dependency-submission
@@ -113,5 +127,5 @@ libraryDependencies ++= Seq(libTestKit),
 dependencyOverrides ++= Seq(zookeeper),
 ```
 - don't need to exclude lib version in sbt
-- can update `libraryDependencies`
+-  can update `libraryDependencies`
 - or use `dependencyOverrides`
