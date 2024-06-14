@@ -87,7 +87,7 @@ evicted
 find deps:
 
 ```bash
-❯ coursier resolve com.google.cloud:google-cloud-bigquery:2.10.10
+❯ coursier resolve com.amazonaws:aws-java-sdk-secretsmanager:1.12.148
 ```
 
 #### sbt-dependency-check
