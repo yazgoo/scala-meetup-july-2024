@@ -135,7 +135,7 @@ graph LR
   A{is it a parent lib?} -->|yes| B[bump it]
   A -->|no| C{ can you bump parent? }
   C -->|yes| D[bump parent]
-  C -->|no| E{ is the lib provided by another lib?}
+  C -->|no| E{ is the lib provided\nby another lib?}
   E -->|yes| F[exclude lib]
   E -->|no| G[override lib]
 ``` 
