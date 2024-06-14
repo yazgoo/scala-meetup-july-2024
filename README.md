@@ -42,7 +42,7 @@ What we want to avoid
 
 goal: give you tips/tools to monitor and fix CVEs
 
-# [sbt-dependency-submition](https://github.com/scalacenter/sbt-dependency-submission/)
+# [sbt-dependency-submission](https://github.com/scalacenter/sbt-dependency-submission/)
 
 ```mermaid
 graph LR
@@ -112,7 +112,7 @@ sbt dependencyCheck
 - generates `target/scala-3.4.2/dependency-check-report.html`
 - *WARNING⚠* does not give exactly the same results as sbt-dependency-submission
 
-## [My fork of sbt-dependency-submition](https://github.com/yazgoo/sbt-dependency-submission) ([Upstream PR](https://github.com/scalacenter/sbt-dependency-submission/pull/197))
+## [My fork of sbt-dependency-submission](https://github.com/yazgoo/sbt-dependency-submission) ([Upstream PR](https://github.com/scalacenter/sbt-dependency-submission/pull/197))
 
 sbt:
 
