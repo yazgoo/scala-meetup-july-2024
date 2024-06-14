@@ -32,11 +32,9 @@ What we want to avoid
 
 <img src="ventilation.svg" width="500"/>
 
-https://www.youtube.com/watch?v=BlCuVZK2aqE
+[Hydrofoil ventilation video](https://www.youtube.com/watch?v=BlCuVZK2aqE)
 
 </details>
-
-## CVEs
 
 > [!NOTE]
 > The Common Vulnerabilities and Exposures (CVE) system provides a reference method 
@@ -48,21 +46,32 @@ goal: give you tips/tools to monitor and fix CVEs
 
 https://github.com/scalacenter/sbt-dependency-submission/
 
-how it works
-
-- generates a snapshot json with a dependency tree
-- publishes the snapshot to github
-- github updates CVE alerts based on the snapshot
+```mermaid
+graph LR
+  A[plugin] -->|generate snapshot| B[plguin]
+  B -->|publish snapshot| C[github]
+  C -->|update CVE alerts| C[github]
+```
 
 ## Setting up the workflow
 
-see `.github/workflows/dependency-graph.yml`
+```yaml
+name: Update Dependency Graph
+on:
+  push:
+    branches:
+      - main
+jobs:
+  dependency-graph:
+    name: Update Dependency Graph
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: scalacenter/sbt-dependency-submission@v2
+```
 
-see https://github.com/yazgoo/scala-meetup-june-2024/actions
-
-## Monitoring CVEs
-
-see https://github.com/yazgoo/scala-meetup-june-2024/security
+runs in [repo actions tab](https://github.com/yazgoo/scala-meetup-june-2024/actions) =>
+alerts are in dependabot section in [repo security tab](https://github.com/yazgoo/scala-meetup-june-2024/security)
 
 ## Tools to monitor dependencies
 
@@ -84,11 +93,13 @@ dependencyBrowseTree
 evicted
 ```
 
-find deps:
+find artifact deps:
 
 ```bash
-❯ coursier resolve com.amazonaws:aws-java-sdk-secretsmanager:1.12.148
+$ coursier resolve com.amazonaws:aws-java-sdk-secretsmanager:1.12.148
 ```
+
+also useful: [mvnrepository.com](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)
 
 #### sbt-dependency-check
 
@@ -98,13 +109,12 @@ https://github.com/albuch/sbt-dependency-check/
 addSbtPlugin("net.vonbuchholtz" % "sbt-dependency-check" % "5.1.0")
 ```
 
-*WARNING⚠* does not give exactly the same results as sbt-dependency-submission
-
-```scala
-dependencyCheck
+```bash
+sbt dependencyCheck
 ```
 
-=> generate `target/scala-3.4.2/dependency-check-report.html`
+- generates `target/scala-3.4.2/dependency-check-report.html`
+- *WARNING⚠* does not give exactly the same results as sbt-dependency-submission
 
 ## My fork of sbt-github-dependency-submition (WIP)
 
@@ -126,33 +136,35 @@ githubAnalyzeDependencies get jackson-databind:2.12.3
 
 several things you can do:
 
-1. if it is a "parent lib", bump the lib
+1. if it is a "parent lib", bump it
 1. bump a parent of the lib
 1. if you can't bump parent: 
     1. if the lib is provided by another lib, exclude it
     1. try and override the lib (**☢**  test it well because there might be incompatibilities)
 
 
-
 ### excluding a lib
+
+`build.sbt`:
 
 ```scala
 libraryDependencies ++= Seq(
-"com.datastax.cassandra" % "cassandra-driver-core" % Versions.Datastax
-  exclude ("io.dropwizard.metrics", "metrics-core")
+"com.test.foo" % "my-dummy-lib" % "0.1.0" exclude ("com.blah", "lib-42")
 )
 ```
 
 
 ### overriding the lib
 
+`build.sbt`:
+
 ```scala
-libraryDependencies ++= Seq(libTestKit),
-dependencyOverrides ++= Seq(zookeeper),
+// don't need to exclude lib version in sbt
+// can update `libraryDependencies`
+libraryDependencies ++= Seq("com.blah" % "lib-42" % "0.2.0"),
+// or override just a jar
+dependencyOverrides ++= Seq("com.blah" % "lib-42" % "0.2.0"),
 ```
-- don't need to exclude lib version in sbt
--  can u pdate `libraryDependencies`
-- or use `dependencyOverrides`
 
 ### Conclusion
 
