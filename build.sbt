@@ -8,5 +8,5 @@ val sparkVersion = "3.0.1"
 
 libraryDependencies ++= Seq(
   "org.scala-lang" % "scala3-library_3" % scalaVersion.value,
-  "com.amazonaws" % "aws-java-sdk-secretsmanager" % "1.12.148"
+  "com.amazonaws" % "aws-java-sdk-secretsmanager" % "1.12.741"
 )
