@@ -1,14 +1,36 @@
 # CVEs on github
 
+<table>
+
+<tr>
+
+<td>
+
 <img src="qrrepo.png" width="300"/>
+
+</td>
+
+<td>
+
+<img src="capy.png" width="300"/>
+
+<br/>
 
 👋 Olivier, dev at teads
 
-## what we want to avoid
+</td>
+
+</tr>
+
+</table>
 
 <details>
 
-![ventilation](ventilation.svg)
+<summary>
+What we want to avoid
+</summary>
+
+<img src="ventilation.svg" width="500"/>
 
 https://www.youtube.com/watch?v=BlCuVZK2aqE
 
@@ -129,5 +151,15 @@ libraryDependencies ++= Seq(libTestKit),
 dependencyOverrides ++= Seq(zookeeper),
 ```
 - don't need to exclude lib version in sbt
--  can update `libraryDependencies`
+-  can u pdate `libraryDependencies`
 - or use `dependencyOverrides`
+
+### Conclusion
+
+Questions ?
+
+<details>
+
+[Comment faire une procuration](https://www.maprocuration.gouv.fr/)
+
+</details>
