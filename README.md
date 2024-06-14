@@ -128,8 +128,6 @@ githubAnalyzeDependencies get jackson-databind:2.12.3
 
 ### fixing a CVE
 
-several things you can do:
-
 ```mermaid 
 graph LR
   A{is it a parent lib?} -->|yes| B[bump it]
