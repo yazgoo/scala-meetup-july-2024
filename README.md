@@ -42,9 +42,7 @@ What we want to avoid
 
 goal: give you tips/tools to monitor and fix CVEs
 
-# sbt-github-dependency-submition
-
-https://github.com/scalacenter/sbt-dependency-submission/
+# [sbt-dependency-submition](https://github.com/scalacenter/sbt-dependency-submission/)
 
 ```mermaid
 graph LR
@@ -101,9 +99,7 @@ $ coursier resolve com.amazonaws:aws-java-sdk-secretsmanager:1.12.148
 
 also useful: [mvnrepository.com](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)
 
-#### sbt-dependency-check
-
-https://github.com/albuch/sbt-dependency-check/
+#### [sbt-dependency-check](https://github.com/albuch/sbt-dependency-check/)
 
 ```scala
 addSbtPlugin("net.vonbuchholtz" % "sbt-dependency-check" % "5.1.0")
@@ -116,9 +112,7 @@ sbt dependencyCheck
 - generates `target/scala-3.4.2/dependency-check-report.html`
 - *WARNING⚠* does not give exactly the same results as sbt-dependency-submission
 
-## My fork of sbt-github-dependency-submition (WIP)
-
-https://github.com/yazgoo/sbt-dependency-submission
+## [My fork of sbt-dependency-submition (WIP)](https://github.com/yazgoo/sbt-dependency-submission)
 
 sbt:
 
@@ -136,12 +130,17 @@ githubAnalyzeDependencies get jackson-databind:2.12.3
 
 several things you can do:
 
-1. if it is a "parent lib", bump it
-1. bump a parent of the lib
-1. if you can't bump parent: 
-    1. if the lib is provided by another lib, exclude it
-    1. try and override the lib (**☢**  test it well because there might be incompatibilities)
+```mermaid 
+graph LR
+  A{is it a parent lib?} -->|yes| B[bump it]
+  A -->|no| C{ can you bump parent? }
+  C -->|yes| D[bump parent]
+  C -->|no| E{ is the lib provided by another lib?}
+  E -->|yes| F[exclude lib]
+  E -->|no| G[override lib]
+``` 
 
+*WARNING⚠* be careful in last two cases, there might be incompatibilites
 
 ### excluding a lib
 
@@ -152,7 +151,6 @@ libraryDependencies ++= Seq(
 "com.test.foo" % "my-dummy-lib" % "0.1.0" exclude ("com.blah", "lib-42")
 )
 ```
-
 
 ### overriding the lib
 
