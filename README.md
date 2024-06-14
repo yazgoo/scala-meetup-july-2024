@@ -46,7 +46,7 @@ goal: give you tips/tools to monitor and fix CVEs
 
 ```mermaid
 graph LR
-  A[plugin] -->|generate snapshot| B[plguin]
+  A[plugin] -->|generate snapshot| B[plugin]
   B -->|publish snapshot| C[github]
   C -->|update CVE alerts| C[github]
 ```
